@@ -1,25 +1,25 @@
 #include<iostream>
 using namespace std;
-int n=0,a[16][16];
+int n=0,a[4][4];
 void initilize(){
-	for(int i=0;i<16;i++){
-		for(int j=0;j<16;j++)
+	for(int i=0;i<4;i++){
+		for(int j=0;j<4;j++)
 			a[i][j]=0;
 	}
 }
 void print(){
-	for(int i=0;i<16;i++){
-		for(int j=0;j<16;j++)
+	for(int i=0;i<4;i++){
+		for(int j=0;j<4;j++)
 			cout<<a[i][j]<<" ";
 		cout<<"\n";
 	}
 }
 bool check(int i,int j){
-	for(int temp=0;temp<16;temp++){     //check in column j in all the rows for queen;
+	for(int temp=0;temp<4;temp++){     //check in column j in all the rows for queen;
 		if(a[temp][j]==1)
 			return false;
 	}
-	for(int temp=0;temp<16;temp++){     //check in row temp in all the previous columns for queen;
+	for(int temp=0;temp<4;temp++){     //check in row temp in all the previous columns for queen;
 		if(a[i][temp]==1)
 			return false;
 	}
@@ -27,7 +27,7 @@ bool check(int i,int j){
 		if(a[temp1][temp2]==1)
 			return false;
 	}
-	for(int temp1=i,temp2=j;temp1<16&&temp2>=0;temp1++,temp2--){  //checks for queen in lower diagonal;
+	for(int temp1=i,temp2=j;temp1<4&&temp2>=0;temp1++,temp2--){  //checks for queen in lower diagonal;
 		if(a[temp1][temp2]==1)
 				return false;
 	}
@@ -35,12 +35,12 @@ bool check(int i,int j){
 }
 
 bool add_queen(int i,int j,int N){
-	if(N==16){
+	if(N==4){
 		print();
 		cout<<"\n\n";
 		return false;
 	}
-	for(int temp=0;temp<16;temp++){
+	for(int temp=0;temp<4;temp++){
 		if(check(temp,j)){	
 		//checks if position is suitable
 		//cout<<"OK";
