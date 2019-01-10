@@ -216,20 +216,21 @@ class Minesweeper:
                 message = ''
 
         return {'cell': cell, 'flag': flag, 'message': message}
-
-
+    
+    def play_level(self):
+        while True:
+            level = int(input("Choose Level \n1.Easy\n2.Medium\n3.Hard\n=> "))
+            if level == 1:
+                this.play(9,12)
+                break;
+            elif level == 2:
+                this.play(12,17)
+                break;
+            elif level == 3:
+                this.play(15,30)
+                break;
+            else:
+                continue;
 
 game = Minesweeper()
-while True:
-    level = int(input("Choose Level \n1.Easy\n2.Medium\n3.Hard\n=> "))
-    if level == 1:
-        game.play(9,12)
-        break
-    elif level == 2:
-        game.play(12,17)
-        break
-    elif level == 3:
-        game.play(15,30)
-        break
-    else:
-        continue
+game.play_level();
