@@ -1,6 +1,7 @@
 // C++ program to print n-th number in Recaman's  
 // sequence 
-#include <bits/stdc++.h> 
+//#include <bits/stdc++.h> 
+//#include<unordered_map>
 #include<iostream>
 using namespace std; 
   
@@ -12,8 +13,8 @@ void recaman(int n)
   
     // Print first term and store it in a hash  
     printf("%d, ", 0); 
-    unordered_map<int> s; 
-    s.insert(0); 
+    unordered_map<int,int> s; 
+    s[0]=0; 
   
     // Print remaining terms using recursive 
     // formula. 
