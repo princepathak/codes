@@ -1,0 +1,12 @@
+body{
+background:grey;
+}
+
+.Personal,.Education{
+font-style:italic;
+color:Blue;
+}
+.Languages{
+font-style:italic;
+color:Red;
+}
